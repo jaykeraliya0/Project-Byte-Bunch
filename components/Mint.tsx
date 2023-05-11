@@ -25,7 +25,7 @@ const Mint = (props: Props) => {
             onClickCapture={mintNFT}
             className="bg-amber-500 mt-4 text-white py-3 px-6 font-bold shadow-inner transition-all duration-300 hover:bg-amber-600"
           >
-            Mint an NFT
+            Mint an NFT (0.05 ETH)
           </button>
         ) : (
           <ConnectButton className="bg-amber-500 mt-12 text-white py-3 px-6 font-bold shadow-inner transition-all duration-300 hover:bg-amber-600" />

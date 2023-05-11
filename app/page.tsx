@@ -1,5 +1,7 @@
 import About from "@/components/About";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import Steps from "@/components/Steps";
 
 export default function Home() {
   const data = [
@@ -21,10 +23,11 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div id="top">
       <Hero />
       <About data={data} />
-      <div></div>
+      <Steps />
+      <Footer />
     </div>
   );
 }

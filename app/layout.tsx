@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className="scrollbar-thin scrollbar-track-black scrollbar-thumb-cyan-600">
         <WalletProvider>{children}</WalletProvider>
       </body>

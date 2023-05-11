@@ -9,7 +9,7 @@ type Props = {
 
 const About = ({ data }: Props) => {
   return (
-    <div className="relative pb-24 bg-gradient-to-l from-cyan-900 to-cyan-900 bg-black/70 bg-blend-multiply px-12 sm:px-8 md:px-16 lg:px-24 xl:px-48 py-16">
+    <div className="relative bg-gradient-to-l from-cyan-900 to-cyan-900 bg-black/70 bg-blend-multiply px-12 sm:px-8 md:px-16 lg:px-24 xl:px-48 pt-16">
       <svg
         className="hidden md:flex absolute -top-36 left-0"
         xmlns="http://www.w3.org/2000/svg"

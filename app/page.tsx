@@ -1,7 +1,5 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
-import NFTs from "@/components/NFTs";
-import Image from "next/image";
 
 export default function Home() {
   const data = [
@@ -26,7 +24,7 @@ export default function Home() {
     <div>
       <Hero />
       <About data={data} />
-      <NFTs />
+      <div></div>
     </div>
   );
 }

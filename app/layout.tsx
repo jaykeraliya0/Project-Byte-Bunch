@@ -1,3 +1,4 @@
+import ClientProvider from "@/components/ClientProvider";
 import "./globals.css";
 import { WalletProvider } from "@/context/WalletContext";
 
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="scrollbar-thin scrollbar-track-black scrollbar-thumb-cyan-600">
-        <WalletProvider>{children}</WalletProvider>
+        <WalletProvider>
+          <ClientProvider>{children}</ClientProvider>
+        </WalletProvider>
       </body>
     </html>
   );

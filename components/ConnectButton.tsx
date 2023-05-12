@@ -22,17 +22,18 @@ const ConnectButton = ({ className }: Props) => {
     setAccount(account);
   };
 
-  const getAccount = async () => {
-    const accounts = await window.ethereum.request({ method: "eth_accounts" });
-    if (accounts.length > 0) {
-      setAddress(accounts[0]);
-      setAccount(accounts[0]);
-    }
-  };
-
   useEffect(() => {
+    const getAccount = async () => {
+      const accounts = await window.ethereum.request({
+        method: "eth_accounts",
+      });
+      if (accounts.length > 0) {
+        setAddress(accounts[0]);
+        setAccount(accounts[0]);
+      }
+    };
     getAccount();
-  }, [getAccount]);
+  }, [setAddress]);
 
   return (
     <button onClick={connectWallet} className={className}>

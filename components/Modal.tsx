@@ -61,7 +61,7 @@ const Modal = ({ open, setOpen, txHash }: Props) => {
                 </div>
                 <div className="bg-[#07171e] px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                   <a
-                    href={`https://etherscan.io/tx/${txHash}`}
+                    href={`https://sepolia.etherscan.io/tx/${txHash}`}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex w-full justify-center rounded-md border border-transparent bg-cyan-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-offset-1 sm:ml-3 sm:w-auto sm:text-sm my-2"

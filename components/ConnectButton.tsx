@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useWallet } from "@/context/WalletContext";
 import { ethers } from "ethers";
+import { toast } from "react-hot-toast";
 
 type Props = {
   className?: string;
@@ -15,6 +16,10 @@ const ConnectButton = ({ className }: Props) => {
   const [account, setAccount] = useState<string>();
 
   const connectWallet = async () => {
+    if (!window.ethereum) {
+      toast.error("MetaMask not installed");
+      return;
+    }
     const provider = new ethers.BrowserProvider(window.ethereum);
     const signer = await provider.getSigner();
     const account = await signer.getAddress();
@@ -24,6 +29,9 @@ const ConnectButton = ({ className }: Props) => {
 
   useEffect(() => {
     const getAccount = async () => {
+      if (!window.ethereum) {
+        return;
+      }
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });

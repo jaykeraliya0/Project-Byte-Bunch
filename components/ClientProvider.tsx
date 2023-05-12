@@ -12,7 +12,6 @@ export default function ClientProvider({
         position="bottom-center"
         toastOptions={{
           className: "",
-          duration: 5000,
           style: {
             background: "#000",
             color: "#fff",

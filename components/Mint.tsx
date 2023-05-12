@@ -5,6 +5,8 @@ import { ethers } from "ethers";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
 import abi from "../artifacts/contracts/ByteBunch.sol/ByteBunch.json";
+import NFTNumber from "./NFTNumber";
+import Modal from "./Modal";
 
 type Props = {};
 
@@ -14,10 +16,13 @@ const Mint = (props: Props) => {
   const { address } = useWallet();
 
   const [loading, setLoading] = useState(false);
+  const [transactionHash, setTransactionHash] = useState("");
+  const [open, setOpen] = useState(false);
 
   const mintNFT = async () => {
-    toast.loading("Minting NFT...");
+    const notification = toast.loading("Minting NFT...");
     setLoading(true);
+    setOpen(false);
     try {
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
@@ -30,9 +35,16 @@ const Mint = (props: Props) => {
         value: ethers.parseEther("0.05"),
       });
       await transaction.wait();
-      toast.success("NFT Minted!");
-    } catch (error) {
-      toast.error("Something went wrong!");
+      setTransactionHash(transaction.hash);
+      setOpen(true);
+
+      toast.success("NFT Minted!", {
+        id: notification,
+      });
+    } catch (error: any) {
+      toast.error(error.message.split("(")[0], {
+        id: notification,
+      });
     } finally {
       setLoading(false);
     }
@@ -40,6 +52,8 @@ const Mint = (props: Props) => {
 
   return (
     <>
+      <Modal open={open} setOpen={setOpen} txHash={transactionHash} />
+      <NFTNumber minted={transactionHash} />
       {address && (
         <p className="text-white mt-4 font-medium text-xs drop-shadow text-center">
           Connected to <span className="text-cyan-500">{address}</span>

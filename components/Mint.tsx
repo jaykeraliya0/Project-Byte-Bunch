@@ -7,6 +7,7 @@ import { useState } from "react";
 import abi from "../artifacts/contracts/ByteBunch.sol/ByteBunch.json";
 import NFTNumber from "./NFTNumber";
 import Modal from "./Modal";
+import { sepolia } from "@/utils/networks";
 
 type Props = {};
 
@@ -19,12 +20,31 @@ const Mint = (props: Props) => {
   const [transactionHash, setTransactionHash] = useState("");
   const [open, setOpen] = useState(false);
 
+  const switchNetwork = async () => {
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: sepolia.chainId }],
+      });
+    } catch (error) {
+      toast.error("Please switch to Sepolia Network");
+    }
+  };
+
   const mintNFT = async () => {
     const notification = toast.loading("Minting NFT...");
     setLoading(true);
     setOpen(false);
     try {
       const provider = new ethers.BrowserProvider(window.ethereum);
+      const network = await provider.getNetwork();
+      const chainId = Number(ethers.formatUnits(network.chainId)) * 10e17;
+
+      if (chainId !== parseInt(sepolia.chainId)) {
+        switchNetwork();
+        throw new Error("Please switch to Sepolia Network and try again");
+      }
+
       const signer = await provider.getSigner();
       const contract = new ethers.Contract(
         process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!,

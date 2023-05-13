@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  // images
+  images: {
+    domains: ["localhost", "ipfs.io"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

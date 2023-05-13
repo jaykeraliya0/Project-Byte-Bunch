@@ -4,7 +4,7 @@ import ConnectButton from "./ConnectButton";
 import { ethers } from "ethers";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
-import abi from "../artifacts/contracts/ByteBunch.sol/ByteBunch.json";
+import abi from "@/artifacts/contracts/ByteBunch.sol/ByteBunch.json";
 import NFTNumber from "./NFTNumber";
 import Modal from "./Modal";
 import { sepolia } from "@/utils/networks";

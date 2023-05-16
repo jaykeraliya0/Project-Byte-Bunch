@@ -11,7 +11,7 @@ export default function NFTsLayout({
       <Image
         width={1920}
         height={1080}
-        className="fixed top-0 object-center object-cover pointer-events-none -z-40"
+        className="fixed h-full top-0 bottom-0 object-center object-cover pointer-events-none -z-40"
         src="/images/background.jpg"
         alt="Background"
       />

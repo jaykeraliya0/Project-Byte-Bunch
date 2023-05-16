@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProfileIcon from "./ProfileIcon";
 
 export default function Header() {
   return (
@@ -7,7 +8,7 @@ export default function Header() {
         className="relative mx-auto flex max-w-7xl items-center p-6 lg:px-8"
         aria-label="Global"
       >
-        <div className="absolute flex items-center">
+        <div className="absolute flex items-center left-0 mx-5">
           <Link
             href="/"
             className="text-cyan-500 hover:text-cyan-600 transition-all duration-300"
@@ -28,6 +29,10 @@ export default function Header() {
               </g>
             </svg>
           </Link>
+        </div>
+        <div className="absolute flex items-center right-0 mx-5">
+          <span className="sr-only">Back to home</span>
+          <ProfileIcon />
         </div>
         <div className="flex-1 flex justify-around">
           <div className="-m-1.5 p-1.5 cursor-pointer">

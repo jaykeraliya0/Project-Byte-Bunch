@@ -29,7 +29,7 @@ const Footer = (props: Props) => {
           © 2021 Byte Bunch. All rights reserved.
         </p>
       </div>
-      <div className="flex justify-center pb-10">
+      <div className="flex justify-end px-10 pb-10">
         <a href="#top">
           <svg
             className="animate-pulse w-10 h-10 text-white hover:text-cyan-600 transition-all duration-300"

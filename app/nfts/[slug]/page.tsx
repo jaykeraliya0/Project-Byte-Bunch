@@ -50,6 +50,7 @@ const NFTs = async ({ params }: Props) => {
   const address = params.slug;
 
   const data: NFT[] = await getData(address);
+  
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mx-24 mt-20 py-10">
       {data.length > 0 ? (

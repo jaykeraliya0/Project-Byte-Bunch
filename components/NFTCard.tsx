@@ -8,8 +8,9 @@ type Props = {
 };
 
 const NFTCard = ({ data }: Props) => {
+  const id = data.name.split("#")[1];
   return (
-    <Link href={`/nfts/${data.name}`}>
+    <Link href={`/nft/${data.dna}?id=${id}`}>
       <div className="max-w-sm mx-auto bg-gradient-to-l from-cyan-900 to-cyan-900 bg-black/70 bg-blend-multiply border border-cyan-950 rounded-lg shadow hover:shadow-md group transition-all duration-300 ease-in-out">
         <div className="w-full h-80 overflow-hidden rounded-t-lg shadow">
           <Image

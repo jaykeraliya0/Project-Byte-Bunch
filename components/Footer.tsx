@@ -1,35 +1,25 @@
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="bg-gradient-to-t from-cyan-900 to-cyan-900 bg-black/70 bg-blend-multiply bg-cover bg-center text-white">
-      <div className="mx-16">
-        <h1 className="text-4xl font-bold text-center py-10">
-          Have a question?{" "}
-          <span className="text-cyan-500 underline decoration-amber-600">
-            Contact us!
-          </span>
-        </h1>
-        <form className="flex flex-col space-y-2 w-full md:w-fit mx-auto">
-          <div className="flex flex-col md:flex-row md:space-x-2 md:space-y-0 space-y-2">
-            <input placeholder="Name" className="contactInput" type="text" />
-            <input placeholder="Email" className="contactInput" type="email" />
-          </div>
-          <input placeholder="Subject" className="contactInput" type="text" />
-          <textarea placeholder="Message" className="contactInput" />
-          <button className="bg-cyan-600 transition-all py-5 px-10 text-black font-bold text-lg hover:bg-cyan-500">
-            Send Message
-          </button>
-        </form>
-      </div>
+    <div className="relative bg-gradient-to-t from-cyan-900 to-cyan-900 bg-black/70 bg-blend-multiply bg-cover bg-center text-white">
       <div className="flex justify-center items-center py-10">
         <p className="text-gray-300 font-medium">
-          © 2021 Byte Bunch. All rights reserved.
+          <span className="text-cyan-500">Byte</span>{" "}
+          <span className="text-amber-500">Bunch</span> Made by{" "}
+          <Link
+            href="https://github.com/jaykeraliya0"
+            target="_blank"
+            className="text-cyan-500 hover:text-cyan-600 transition-all duration-300"
+          >
+            Jay Keraliya
+          </Link>
         </p>
       </div>
-      <div className="flex justify-end px-10 pb-10">
+      <div className="absolute bottom-0 right-0 flex justify-end px-10 pb-10">
         <a href="#top">
           <svg
             className="animate-pulse w-10 h-10 text-white hover:text-cyan-600 transition-all duration-300"

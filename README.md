@@ -83,11 +83,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 To run this project, you will need to add the following environment variables to your .env file. There are two .env files on at root and another at backend folder.
 
 1. Root env
+
 `NEXT_PUBLIC_CONTRACT_ADDRESS` **Address of smart contract after deployment**
 
 `INFURA_API_KEY` **Infura API key**
 
 2. Backend env
+
 `API_URL` **You can get from alchemy**
 
 `PRIVATE_KEY` **Private key of your ethereum wallet**

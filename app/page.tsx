@@ -17,7 +17,7 @@ export default function Home() {
         "Byte Bunch NFTs are limited to 41 unique characters. Once they are gone, they are gone forever.",
     },
     {
-      title: "Deferent Themes",
+      title: "Different Themes",
       description:
         "Byte Bunch NFTs are divided into different themes, each with their own unique traits and personalities.",
     },

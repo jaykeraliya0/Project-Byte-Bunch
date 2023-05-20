@@ -16,17 +16,15 @@ contract ByteBunch is ERC721, Ownable {
     string public uriSuffix = ".json";
     string public hiddenMetadataUri;
 
-    uint256 public cost = 0.04 ether;
-    uint256 public maxSupply = 41;
-    uint256 public maxMintAmountPerTx = 1;
+    uint256 public cost = 0.01 ether;
+    uint256 public maxSupply = 10000;
+    uint256 public maxMintAmountPerTx = 5;
 
     bool public paused = true;
     bool public revealed = false;
 
-    constructor() ERC721("Byte Bunch", "BBCH") {
-        setHiddenMetadataUri(
-            "ipfs://QmQgQnT2R5TQ199AuW8axtDKzE7bf2DKZ4LBYgPMDULRGg/hidden.json"
-        );
+    constructor() ERC721("NAME", "SYMBOL") {
+        setHiddenMetadataUri("ipfs:///__CID__.json");
     }
 
     modifier mintCompliance(uint256 _mintAmount) {

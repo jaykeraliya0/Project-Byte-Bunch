@@ -1,5 +1,5 @@
 "use client";
-import { sepolia } from "@/utils/networks";
+import { goerli } from "@/utils/networks";
 import { ArrowsRightLeftIcon } from "@heroicons/react/24/outline";
 import { ethers } from "ethers";
 import { useState } from "react";
@@ -23,10 +23,10 @@ const TransferToken = ({ tokenId }: Props) => {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: sepolia.chainId }],
+        params: [{ chainId: goerli.chainId }],
       });
     } catch (error) {
-      toast.error("Please switch to Sepolia Network");
+      toast.error("Please switch to goerli Network");
     }
   };
 
@@ -39,9 +39,9 @@ const TransferToken = ({ tokenId }: Props) => {
       const network = await provider.getNetwork();
       const chainId = Number(ethers.formatUnits(network.chainId)) * 10e17;
 
-      if (chainId !== parseInt(sepolia.chainId)) {
+      if (chainId !== parseInt(goerli.chainId)) {
         switchNetwork();
-        throw new Error("Please switch to Sepolia Network and try again");
+        throw new Error("Please switch to goerli Network and try again");
       }
 
       if (ethers.isAddress(address) === false) {

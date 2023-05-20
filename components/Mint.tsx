@@ -7,7 +7,7 @@ import { useState } from "react";
 import abi from "@/artifacts/contracts/ByteBunch.sol/ByteBunch.json";
 import NFTNumber from "./NFTNumber";
 import Modal from "./Modal";
-import { sepolia } from "@/utils/networks";
+import { goerli } from "@/utils/networks";
 
 type Props = {};
 
@@ -24,10 +24,10 @@ const Mint = (props: Props) => {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: sepolia.chainId }],
+        params: [{ chainId: goerli.chainId }],
       });
     } catch (error) {
-      toast.error("Please switch to Sepolia Network");
+      toast.error("Please switch to goerli Network");
     }
   };
 
@@ -40,9 +40,9 @@ const Mint = (props: Props) => {
       const network = await provider.getNetwork();
       const chainId = Number(ethers.formatUnits(network.chainId)) * 10e17;
 
-      if (chainId !== parseInt(sepolia.chainId)) {
+      if (chainId !== parseInt(goerli.chainId)) {
         switchNetwork();
-        throw new Error("Please switch to Sepolia Network and try again");
+        throw new Error("Please switch to goerli Network and try again");
       }
 
       const signer = await provider.getSigner();
@@ -52,7 +52,7 @@ const Mint = (props: Props) => {
         signer
       );
       const transaction = await contract.mint(1, {
-        value: ethers.parseEther("0.05"),
+        value: ethers.parseEther("0.04"),
       });
       await transaction.wait();
       setTransactionHash(transaction.hash);

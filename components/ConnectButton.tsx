@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useWallet } from "@/context/WalletContext";
 import { ethers } from "ethers";
-import { sepolia } from "@/utils/networks";
+import { goerli } from "@/utils/networks";
 import { toast } from "react-hot-toast";
 
 type Props = {
@@ -20,10 +20,10 @@ const ConnectButton = ({ className }: Props) => {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: sepolia.chainId }],
+        params: [{ chainId: goerli.chainId }],
       });
     } catch (error) {
-      toast.error("Please switch to Sepolia Network");
+      toast.error("Please switch to goerli Network");
     }
   };
 

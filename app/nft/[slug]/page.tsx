@@ -29,7 +29,7 @@ const ipfsToHttps = (ipfs: string) => {
 const getData = async (slug: string, id: string) => {
   try {
     const signer = new ethers.InfuraProvider(
-      "sepolia",
+      "goerli",
       process.env.INFURA_API_KEY
     );
 
@@ -54,7 +54,7 @@ const getData = async (slug: string, id: string) => {
 const getOwner = async (id: string) => {
   try {
     const signer = new ethers.InfuraProvider(
-      "sepolia",
+      "goerli",
       process.env.INFURA_API_KEY
     );
 
@@ -161,7 +161,7 @@ const NFTDetailsPage = async ({ params, searchParams }: Props) => {
               <li className="text-gray-400 flex justify-between">
                 <span className="text-gray-200">Contract: </span>
                 <Link
-                  href={`https://sepolia.etherscan.io/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`}
+                  href={`https://goerli.etherscan.io/address/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-500 hover:text-amber-600"
@@ -176,7 +176,7 @@ const NFTDetailsPage = async ({ params, searchParams }: Props) => {
               <li className="text-gray-400 flex justify-between">
                 <span className="text-gray-200">Token ID: </span>
                 <Link
-                  href={`https://sepolia.etherscan.io/token/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}?a=${id}`}
+                  href={`https://goerli.etherscan.io/token/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}?a=${id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-500 hover:text-amber-600"
@@ -187,7 +187,7 @@ const NFTDetailsPage = async ({ params, searchParams }: Props) => {
               <li className="text-gray-400 flex justify-between">
                 <span className="text-gray-200">Owner: </span>
                 <Link
-                  href={`https://sepolia.etherscan.io/address/${owner}`}
+                  href={`https://goerli.etherscan.io/address/${owner}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-500 hover:text-amber-600"

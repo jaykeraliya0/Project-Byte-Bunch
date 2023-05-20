@@ -19,7 +19,7 @@ const ipfsToHttps = (ipfs: string) => {
 const getData = async (address: string) => {
   try {
     const signer = new ethers.InfuraProvider(
-      "sepolia",
+      "goerli",
       process.env.INFURA_API_KEY
     );
     const contract = new ethers.Contract(
@@ -50,9 +50,9 @@ const NFTs = async ({ params }: Props) => {
   const address = params.slug;
 
   const data: NFT[] = await getData(address);
-  
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mx-5 sm:mx-10 mt-20 py-10">
+    <div className="grid min-h-screen grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mx-5 sm:mx-10 mt-20 py-10">
       {data.length > 0 ? (
         data.map((item) => <NFTCard key={item.name} data={item} />)
       ) : (

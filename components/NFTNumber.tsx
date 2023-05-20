@@ -44,7 +44,7 @@ const NFTNumber = ({ minted }: Props) => {
         <></>
       ) : (
         <h3 className="text-white text-2xl text-center font-bold w-2/3 mt-4">
-          {nftNumber} / 41 <span className="text-">Minted</span>
+          {nftNumber.toFixed(0)} / 41 <span className="text-">Minted</span>
         </h3>
       )}
     </>

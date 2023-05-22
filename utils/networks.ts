@@ -1,3 +1,15 @@
+export const main = {
+  chainId: `0x${Number(1).toString(16)}`,
+  chainName: "Main Net",
+  nativeCurrency: {
+    name: "Ethereum",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  rpcUrls: ["https://eth.llamarpc.com"],
+  blockExplorerUrls: ["https://etherscan.io"],
+};
+
 export const sepolia = {
   chainId: `0x${Number(11155111).toString(16)}`,
   chainName: "sepolia",
@@ -7,7 +19,7 @@ export const sepolia = {
     decimals: 18,
   },
   rpcUrls: ["https://rpc.sepolia.io"],
-  blockExplorerUrls: ["https://sepolia.io"],
+  blockExplorerUrls: ["https://sepolia.etherscan.io"],
 };
 
 export const goerli = {

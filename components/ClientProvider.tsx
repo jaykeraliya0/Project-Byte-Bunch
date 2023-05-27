@@ -11,6 +11,7 @@ export default function ClientProvider({
       <Toaster
         position="bottom-center"
         toastOptions={{
+          duration: 2000,
           className: "",
           style: {
             background: "#000",

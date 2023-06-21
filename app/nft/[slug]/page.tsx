@@ -176,7 +176,7 @@ const NFTDetailsPage = async ({ params, searchParams }: Props) => {
               <li className="text-gray-400 flex justify-between">
                 <span className="text-gray-200">Token ID: </span>
                 <Link
-                  href={`https://goerli.etherscan.io/token/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}?a=${id}`}
+                  href={`https://testnets.opensea.io/assets/goerli/${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}/${id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-500 hover:text-amber-600"

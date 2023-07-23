@@ -99,4 +99,3 @@ You can find the respective .env.example in project directories.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-

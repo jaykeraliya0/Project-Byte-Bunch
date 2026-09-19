@@ -27,7 +27,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "hardhat": "^3.0.15",
+    "hardhat": "^3.17.0",
     "tailwind-scrollbar": "^3.0.1"
   }
 }
